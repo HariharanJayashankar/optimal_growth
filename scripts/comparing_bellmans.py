@@ -1,5 +1,5 @@
 import sys
-sys.path.insert(0, 'C:/Users/Administrator/Documents/personal/optimal_growth/scripts')
+sys.path.insert(0, 'C:/Users/Hariharan/Documents/projects/optimal_growth/scripts')
 import numpy as np
 from analytic_bellman import log_consumption
 from bellman import bellman_updater
