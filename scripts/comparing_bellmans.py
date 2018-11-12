@@ -1,10 +1,11 @@
 import sys
-sys.path.insert(0, 'C:/Users/Hariharan/Documents/projects/optimal_growth/scripts')
+sys.path.insert(0, 'C:/Users/admin/Documents/personal/optimal_growth/scripts')
 import numpy as np
 from analytic_bellman import log_consumption
 from bellman import bellman_updater
 import matplotlib.pyplot as plt
 
+# load in our analytical model and assign all parameters
 mdl = log_consumption()
 alpha, beta, s, mu = mdl.alpha, mdl.beta, mdl.s, mdl.mu
 
@@ -31,3 +32,33 @@ ax.plot(grid, w_star, marker='o', label = "Bellman Update")
 ax.plot(grid, mdl.v_star(grid), label = "Analytical Solution")
 ax.legend(loc = "lower right")
 plt.show()
+
+#==comparing solutions after iterating a bit==#
+
+w = 5 * np.log(grid)  # An initial condition
+n = 500
+fig, ax = plt.subplots(figsize=(9, 6))
+ax.set_xlim(np.min(grid), np.max(grid))
+lb = 'initial condition'
+ax.plot(grid, w, color=plt.cm.jet(0), lw=2, alpha=0.6, label=lb)
+for i in range(n):
+    w = bellman_updater(w,
+                         grid,
+                         np.log,
+                         beta,
+                         lambda k: k**alpha,
+                         shocks)[0]
+
+    ax.plot(grid, w, color=plt.cm.jet(i / n), lw=2, alpha=0.6)
+    
+lb = 'true value function'
+ax.plot(grid, mdl.v_star(grid), 'k-', lw=2, alpha=0.8, label=lb)
+ax.legend(loc='lower right')
+plt.show()
+
+#This seems to be working. We seem to converge to our true solution
+#So our code seems ok. It seems that we are updating our bellman correctly
+
+
+
+    

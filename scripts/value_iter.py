@@ -1,9 +1,8 @@
 import sys
-sys.path.insert(0, 'C:/Users/Hariharan/Documents/projects/optimal_growth/scripts')
+sys.path.insert(0, 'C:/Users/admin/Documents/personal/optimal_growth/scripts')
 import numpy as np
 from bellman import bellman_updater #the bellman updater
 from analytic_bellman import log_consumption
-%matplotlib inline
 import matplotlib.pyplot as plt
 
 #parameters
@@ -48,7 +47,7 @@ while error > tol and i < iter:
 
 #plotting optimal values
 
-fig, ax = plt.subplots(figsize = (9, 6))
+fig, ax = plt.subplots(figsize = (8, 5))
 ax.plot(grid, w, marker = 'o', label = "Numerical Solution")
 ax.plot(grid, mdl.v_star(grid), label = "Analytical Solution")
 ax.legend()
