@@ -1,5 +1,6 @@
 import numpy as np
 
+
 class log_consumption():
     '''
     f(k) = z * k**alpha
@@ -9,6 +10,7 @@ class log_consumption():
     v_star = (1 - beta)^(-1)(ln[(1-beta*alpha)]) + beta*alpha/(1 - beta*alpha)
     * ln(beta*alpha) + apha/(1 - alpha*beta) ln(k)
     '''
+
     def __init__(self, alpha=0.3, beta=0.99, mu=0, s=0.1):
 
         self.alpha, self.beta, self.mu, self.s = alpha, beta, mu, s
