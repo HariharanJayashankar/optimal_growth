@@ -57,8 +57,16 @@ fig, ax = plt.subplots(figsize=(9, 6))
 ax.plot(grid, w, marker='o', label="Numerical Solution")
 ax.plot(grid, mdl.v_star(grid), label="Analytical Solution")
 ax.legend()
-ax.set_title("Bellman: Numerical Solution vs Analytical Solution")
-fig.savefig('C:/Users/admin/Documents/personal/optimal_growth/figures/bellman_comparison.png')
+ax.set_title("Bellman Value Function: Numerical Solution vs Analytical Solution")
+fig.savefig('C:/Users/admin/Documents/personal/optimal_growth/figures/value_comparison.png')
 
-# Convergence happens, although not perfectly. Even for 5000 iterations, the error rate oscilates around 5e-14
-# for quite a while. Why does this happen? Is it not possible for us to get lower error rates?
+# plotting policy functions
+
+fig, ax = plt.subplots(figsize = (9, 6))
+ax.plot(grid, pol, marker = 'o', label = 'Numerical Solution')
+ax.plot(grid, mdl.c_star(grid), label = "Analytic Solution")
+ax.legend()
+ax.set_title("Bellman Policy Function: Numerical Solution vs Analytical Solution")
+fig.savefig('C:/Users/admin/Documents/personal/optimal_growth/figures/policy_comparison.png')
+
+# Convergence happens, although not perfectly.
