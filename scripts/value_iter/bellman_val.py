@@ -1,9 +1,5 @@
 # -*- coding: utf-8 -*-
-"""
-Bellman Updater
 
-@author: Hariharan
-"""
 import numpy as np
 from scipy.optimize import fminbound
 

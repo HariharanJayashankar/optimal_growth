@@ -1,7 +1,8 @@
 import sys
-sys.path.insert(0, 'C:/Users/admin/Documents/personal/optimal_growth/scripts')
 import numpy as np
-from bellman import bellman_updater  # the bellman updater
+sys.path.insert(0, 'C:/Users/admin/Documents/personal/optimal_growth/scripts/value_iter')
+from bellman_val import bellman_updater  # the bellman updater
+sys.path.insert(0, 'C:/Users/admin/Documents/personal/optimal_growth/scripts/analytic_bellman')
 from analytic_bellman import log_consumption
 import matplotlib.pyplot as plt
 
@@ -24,7 +25,6 @@ w = np.empty_like(grid)
 tol = 1e-16
 iter = 5000
 
-# Tw = np.empty_like(grid)
 error = tol + 1
 i = 0
 errors = []
