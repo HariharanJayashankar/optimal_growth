@@ -14,8 +14,8 @@ def eul_updater(g,
     '''
     Updates the euler function in a dynamic optimization setting
     
-    g: inputs of initial guesses for y
-    grid: grid points for c
+    g: inputs of initial guesses for the policy function
+    grid: grid points for the policy function
     u: utility function
     u_prime: derivative of utility wrt c
     beta: discount rate
