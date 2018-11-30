@@ -1,8 +1,8 @@
 import numpy as np
 import sys
-sys.path.insert(0, 'C:/Users/admin/Documents/personal/optimal_growth/scripts/pol_iter')
+sys.path.insert(0, '../pol_iter')
 from bellman_pol import eul_updater
-sys.path.insert(0, 'C:/Users/admin/Documents/personal/optimal_growth/scripts/analytic_bellman')
+sys.path.insert(0, '../analytic_bellman')
 from analytic_bellman import log_consumption
 import matplotlib.pyplot as plt
 
@@ -53,7 +53,7 @@ fig, ax = plt.subplots(figsize=(9, 6))
 ax.plot(np.linspace(0, len(errors), num = len(errors)), errors, label="Error")
 ax.legend()
 ax.set_title('Error Rate over Iteration')
-fig.savefig('C:/Users/admin/Documents/personal/optimal_growth/figures/pol_iter/error.png')
+fig.savefig('./error.png')
 
 
 #policy
@@ -62,6 +62,6 @@ ax.plot(grid, g, marker='o', label="Numerical Solution")
 ax.plot(grid, mdl.c_star(grid), label="Analytical Solution")
 ax.legend()
 ax.set_title("Bellman Value Function: Numerical Solution vs Analytical Solution")
-fig.savefig('C:/Users/admin/Documents/personal/optimal_growth/figures/pol_iter/policy_comparison.png')
+fig.savefig('./policy_comparison.png')
 
 

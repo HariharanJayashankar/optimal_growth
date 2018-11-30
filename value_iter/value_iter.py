@@ -1,8 +1,8 @@
 import sys
 import numpy as np
-sys.path.insert(0, 'C:/Users/admin/Documents/personal/optimal_growth/scripts/value_iter')
+sys.path.insert(0, '../value_iter')
 from bellman_val import bellman_updater  # the bellman updater
-sys.path.insert(0, 'C:/Users/admin/Documents/personal/optimal_growth/scripts/analytic_bellman')
+sys.path.insert(0, '../analytic_bellman')
 from analytic_bellman import log_consumption
 import matplotlib.pyplot as plt
 
@@ -48,7 +48,7 @@ fig, ax = plt.subplots(figsize=(9, 6))
 ax.plot(np.linspace(0, iter, num=iter), errors, label="Error")
 ax.legend()
 ax.set_title('Error Rate over Iteration')
-fig.savefig('C:/Users/admin/Documents/personal/optimal_growth/figures/error.png')
+fig.savefig('./error.png')
 
 
 # plotting optimal values
@@ -58,7 +58,7 @@ ax.plot(grid, w, marker='o', label="Numerical Solution")
 ax.plot(grid, mdl.v_star(grid), label="Analytical Solution")
 ax.legend()
 ax.set_title("Bellman Value Function: Numerical Solution vs Analytical Solution")
-fig.savefig('C:/Users/admin/Documents/personal/optimal_growth/figures/value_comparison.png')
+fig.savefig('./value_comparison.png')
 
 # plotting policy functions
 
@@ -67,6 +67,6 @@ ax.plot(grid, pol, marker = 'o', label = 'Numerical Solution')
 ax.plot(grid, mdl.c_star(grid), label = "Analytic Solution")
 ax.legend()
 ax.set_title("Bellman Policy Function: Numerical Solution vs Analytical Solution")
-fig.savefig('C:/Users/admin/Documents/personal/optimal_growth/figures/policy_comparison.png')
+fig.savefig('./policy_comparison.png')
 
 # Convergence happens, although not perfectly.

@@ -1,8 +1,8 @@
 import numpy as np
 import sys
-sys.path.insert(0, 'C:/Users/admin/Documents/personal/optimal_growth/scripts/analytic_bellman')
+sys.path.insert(0, '../analytic_bellman')
 from analytic_bellman import log_consumption
-sys.path.insert(0, 'C:/Users/admin/Documents/personal/optimal_growth/scripts/pol_iter')
+sys.path.insert(0, '../pol_iter')
 from bellman_pol import eul_updater
 import matplotlib.pyplot as plt
 
